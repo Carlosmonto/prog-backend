@@ -2,7 +2,7 @@ const http = require('http');
 
 const server = http.createServer((req, res) => {
   if (req.url === '/old-page') {
-    res.writeHead(301, { 'Location': '/new-page' });
+    res.writeHead(301, { 'Location': 'text/plain' });
     res.end();
   } else if (req.url === '/new-page') {
     res.statusCode = 200;
@@ -10,7 +10,7 @@ const server = http.createServer((req, res) => {
     res.end('Esta es la nueva página.');
   } else {
     res.statusCode = 404;
-    res.setHeader('Content-Type', 'text/plain');
+    res.setHeader('Content-Type', '/new-page');
     res.end('Página no encontrada');
   }
 });

@@ -2,8 +2,8 @@ const http = require('http');
 
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
-  res.setHeader('Content-Type', 'application/json');
-  res.end(JSON.stringify({ message: 'Hola, Mundo!', status: 'success' }));
+  res.setHeader('Content-Type','text/html');
+  res.end(JSON.stringify({ message: 'buenas noches esto puede ser -----', status: 'success' }));
 });
 
 const port = 3000;
